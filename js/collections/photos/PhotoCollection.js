@@ -2,22 +2,39 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'models/photo/PhotoModel'
-    ], function($,_,Backbone, PhotoModel){
+    'models/photo/PhotoModel',
+    'backbonepaginator'
 
-        var PhotoCollection = Backbone.Collection.extend({
+    ], function($,_,Backbone, PhotoModel, BackbonePaginator){
+
+        var PhotoCollection = Backbone.PageableCollection.extend({
 
             model: PhotoModel,
+            gallery_id: 1,
+            state: {
 
-            tagName:'yumm',
+                firstPage: 1,
+                currentPage: 1,
+                totalRecords: 10000
+              },
+  
+   
+            url: function(){
 
-            url: 'http://localhost:3000/photo_collections/2',
+                return 'http://localhost:3000/photo_collections/' + this.gallery_id + '/photos';
+            },
+                configRequest:function(options) {
+                    this.gallery_id = options.gallery_id;
+                    this.page = options.page;
+
+                },
+
 
            sync: function(method, model, options) {
              var params = _.extend({
                 type: 'GET',
                 dataType: 'jsonp',
-                url: model.url,
+                url: model.url(),
                 processData: true,
 
             }, options);
@@ -26,6 +43,7 @@ define([
             },
 
             parse: function(response){
+
                 return response;
 
             }

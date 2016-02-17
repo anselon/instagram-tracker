@@ -2,20 +2,50 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Anna Selonick">
 
-	<title>Hello World</title>
+	<title>Hashtag Tracker</title>
 
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- custom CSS here -->
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<script data-main="js/main" src="js/libs/require/require.js"></script>
 
 </head>
 
-<body>
-	<h1> Hello World</h1>
-	<section id = "content"></section>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <b>Hashtag Tracker</b>
+      </a>
+    </div>
+  </div>
+</nav>
+	
+	<section id = "content" class="continer-fluid">
+
+		<table  id ="gallery-table" class="table table-striped">
+			<tbody id ="gallery-container"class="table ">
+			</tbody>
+		</table>
+	   <div class="gallery-images text-muted">
+      	<div class="container" id="photo-collection">
+			<div id="photo-row" class="row">
+			</div>
+		</div>
+	</div>
+
+	</section>
 
 </body>
+
 
 </html>
 

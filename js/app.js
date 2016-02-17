@@ -2,8 +2,11 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
-	'router'
-], function($,_,Backbone, Router){
+	'router',
+	'bootstrap',
+	'backbonepaginator'
+
+], function($,_,Backbone, Router, Bootstrap, BackbonePaginator){
 // pass in jQuery, underscore, backbone and router
 	var initialize = function(){
 		Router.initialize();

@@ -3,19 +3,27 @@ define([
     'underscore',
     'backbone',
     'views/photo/PhotoView',
-    'collections/photos/PhotoCollection',
-    'text!templates/photo.html'
-    ], function($,_,Backbone, PhotoView, PhotoCollection, PhotoGridTemplate){
+    'text!templates/photo.html',
+    'text!templates/pagination.html',
+
+
+
+    ], function($,_,Backbone, PhotoView,  PhotoGridTemplate, PaginationTemplate){
         var PhotoListView = Backbone.View.extend({
             tagName: 'ul',
 
+            template:_.template(PaginationTemplate),
+
             initialize: function(){
+       
+
                 var view = this;
+
                 this.collection.fetch({
-                    data: { page: this.page },
-                    traditional: true,
+
                     success: function(collection, response,options){
                         view.render();
+                       
                     },
                     error: function(){
                         console.log("PhotoListView failed to fetch photos");
@@ -24,8 +32,32 @@ define([
 
             },
 
-            render: function(){
+            events: {
+                'click button.next' : 'nextPage',
+                'click button.prev' : 'prevPage'
+            },
+    
+            nextPage: function(){
+               var view = this;
+               this.collection.getNextPage().done(function(){
+                 view.render();
 
+               });
+            },
+
+            prevPage: function(){
+               var view = this;
+               this.collection.getPrevPage().done(function(){
+                 view.render();
+
+               });
+            },
+
+
+            render: function(){
+                this.$el.empty();
+                this.$el.append(this.template);
+                this.setElement(this.$el);
                 this.collection.each(function(photo){
 
                     // TODO: handle zombie views, once pagination is added.
@@ -33,6 +65,8 @@ define([
                     this.$el.append(photoView.render().el);
 
                 }, this);
+
+                
 
                 return this;
             }
