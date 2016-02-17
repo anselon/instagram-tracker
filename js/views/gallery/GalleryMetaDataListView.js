@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone',
     'views/gallery/GalleryMetaDataView',
-    'text!templates/gallerylist.html'
+    'text!templates/gallery_list.html'
 
     ], function($,_,Backbone,  GalleryMetaDataView, GalleryListTemplate){
         var GalleryMetaDataListView = Backbone.View.extend({

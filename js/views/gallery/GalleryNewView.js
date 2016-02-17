@@ -2,32 +2,43 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'views/photo/PhotoListView',
-    'text!templates/gallery.html',
-    ], function($,_,Backbone, PhotoListView, GalleryTemplate){
-        var GalleryView = Backbone.View.extend({
+    'text!templates/gallery_new.html',
+    ], function($,_,Backbone,  GalleryNewTemplate){
+        var GalleryNewView = Backbone.View.extend({
 
-            template: _.template(GalleryTemplate),
+            template: _.template(GalleryNewTemplate),
+
+            events: {
+              'click button.submit' : createGallery
+            },
 
             initialize: function() {
-            
-                
+
               this.listenTo(this.model, 'change', this.render);
+
+            },
+
+            createGallery: function(hashtag, start_date, end_date){
               
-              var photos = this.model.get('photos');
               photos.configRequest({gallery_id: this.model.get('id')});
               photos.fetch({
+                    type: 'POST',
+                    data: {
+                      photo_collection: {
+                        start_date: this.start_date,
+                        end_date: this.end_date,
+                        tag: this.tag
+                      }
+
+
+                    },
                     success: function(collection, response,options){
-                        
+                        console.log(response);
                     },
                     error: function(){
                         console.log("PhotoListView failed to fetch photos");
                     }
                 });
-
-              this.listenTo(photos, 'reset', this.render);
-
-
             },
 
             render: function(){

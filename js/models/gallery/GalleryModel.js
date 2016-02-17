@@ -8,7 +8,6 @@ define([
         var GalleryModel = Backbone.Model.extend({
             urlRoot: 'http://localhost:3000/photo_collections/',
             defaults: {
-                id: 1,
                 tag: '',
                 start_date: new Date(),
                 end_date: new Date()
@@ -35,6 +34,7 @@ define([
             sync: function(method, model, options) {
              var params = _.extend({
                 type: 'GET',
+             //type:'POST'
                 dataType: 'jsonp',
                 url: model.url(),
                 processData: true,

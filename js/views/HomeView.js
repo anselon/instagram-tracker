@@ -3,7 +3,8 @@ define([
     'underscore',
     'backbone',
     'collections/galleries/GalleryCollection',
-    'views/gallery/GalleryMetaDataListView'
+    'views/gallery/GalleryMetaDataListView',
+    'models/gallery/GalleryModel'
 
     ], function($,_,Backbone, GalleryCollection, GalleryMetaDataListView){
         var HomeView = Backbone.View.extend({
@@ -17,6 +18,9 @@ define([
             //List existing galleries
             var galleries = new GalleryCollection();
             galleryMetaDataListView = new GalleryMetaDataListView({ collection: galleries, el: '#gallery-container' });
+
+            var newGallery = new GalleryModel();
+            
 
                
             },

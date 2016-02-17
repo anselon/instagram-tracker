@@ -47,7 +47,7 @@ define([
 
             prevPage: function(){
                var view = this;
-               this.collection.getPrevPage().done(function(){
+               this.collection.getPreviousPage().done(function(){
                  view.render();
 
                });
