@@ -31,6 +31,7 @@ define([
             },
 
             render: function(){
+                $('form').empty();
 
                 //render gallery attributes
                 var galleryModel = this.model.toJSONWithDate();

@@ -27,7 +27,7 @@ define([
                 //show gallery
                 var gallery = new GalleryModel({id: gallery_id});
                 gallery.fetch({
-                    success: function(model){
+                    success: function(){
                     },
                     error: function(){}
                 });

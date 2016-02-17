@@ -27,3 +27,7 @@ label{
 .card-text {
   font-size: 85%;
 }
+
+.btn{
+  margin-left: .75em;
+}
