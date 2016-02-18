@@ -1,0 +1,32 @@
+{
+  "name": "pixlee-backbone",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "connect": "^2.7.0",
+    "requirejs": "^2.1.22"
+  },
+  "engines": {
+    "node": "0.10.32"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "description": "A Backbone, Underscore and Require.js app skeleton.",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anselon/pixlee-backbone.git"
+  },
+  "keywords": [
+    "instagram",
+    "hashtags"
+  ],
+  "author": "Anna Selonick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anselon/pixlee-backbone/issues"
+  },
+  "homepage": "https://github.com/anselon/pixlee-backbone#readme"
+}
