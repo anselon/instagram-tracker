@@ -13,12 +13,12 @@ define([
             },
 
             initialize: function() {
+              //render gallery list when new one added
+              this.collection.bind("reset", _.bind(this.render, this));
 
-              //this.listenTo(this.model, 'change', this.createGallery);
-              //_.bindAll(this, "createGallery");
             },
             getModelData: function(el) {
-                            //get dates 
+                            
               var inputArray = $(el).serializeArray();
             
               var len = inputArray.length;
@@ -37,7 +37,7 @@ define([
                 start_date: start_date,
                 end_date: end_date
               };
-              console.log(modelData);
+             
 
               return modelData;
 
@@ -56,8 +56,8 @@ define([
               this.model.set('start_date', collectionData['start_date']);
               this.model.set('end_date', collectionData['end_date']);
               
-              this.model.create(data).done(this.render);
-              console.log("data:",data);
+              this.model.create(data).done(this.collection.fetch());
+             
         
             },
 
