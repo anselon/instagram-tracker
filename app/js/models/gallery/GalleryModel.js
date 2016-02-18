@@ -47,7 +47,7 @@ define([
                     data: JSON.stringify(data),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
-                    success: function(data){alert(New collection successfully created.);},
+                    success: function(data){alert("New collection successfully created.");},
                     failure: function(errMsg) {
                         consol.log(errMsg);
                     }

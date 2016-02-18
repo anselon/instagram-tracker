@@ -46,8 +46,9 @@ define([
             },
 
             createGallery: function(event){
+
               event.preventDefault();
-   
+              
               console.log('creating gallery');
               var collectionData = this.getModelData(event.target);
   
