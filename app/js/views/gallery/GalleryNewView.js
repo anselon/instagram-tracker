@@ -14,7 +14,7 @@ define([
 
             initialize: function() {
               //render gallery list when new one added
-              this.collection.bind("reset", _.bind(this.render, this));
+              
 
             },
             getModelData: function(el) {
@@ -57,7 +57,7 @@ define([
               this.model.set('start_date', collectionData['start_date']);
               this.model.set('end_date', collectionData['end_date']);
               
-              this.model.create(data).done(this.collection.fetch());
+              this.model.create(data);
              
         
             },

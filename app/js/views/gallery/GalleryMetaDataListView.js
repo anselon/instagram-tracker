@@ -8,7 +8,7 @@ define([
     ], function($,_,Backbone,  GalleryMetaDataView, GalleryListTemplate){
         var GalleryMetaDataListView = Backbone.View.extend({
            
-           
+            
             initialize: function(){
                 var view = this;
                 this.collection.fetch({
