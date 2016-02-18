@@ -6,7 +6,7 @@ define([
     ], function($,_,Backbone, PhotoCollection){
 
         var GalleryModel = Backbone.Model.extend({
-            urlRoot: 'http://localhost:3000/photo_collections/',
+            urlRoot: 'https://intense-plains-15719.herokuapp.com/photo_collections/',
             defaults: {
                 tag: '',
                 start_date: new Date(),

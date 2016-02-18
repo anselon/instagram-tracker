@@ -11,7 +11,7 @@ define([
 
             
 
-            url: 'http://localhost:3000/photo_collections',
+            url: 'hhttps://intense-plains-15719.herokuapp.com/photo_collections',
 
            sync: function(method, model, options) {
              var params = _.extend({

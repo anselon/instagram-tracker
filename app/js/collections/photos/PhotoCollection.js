@@ -21,7 +21,7 @@ define([
    
             url: function(){
 
-                return 'http://localhost:3000/photo_collections/' + this.gallery_id + '/photos';
+                return 'https://intense-plains-15719.herokuapp.com/photo_collections/' + this.gallery_id + '/photos';
             },
                 configRequest:function(options) {
                     this.gallery_id = options.gallery_id;
