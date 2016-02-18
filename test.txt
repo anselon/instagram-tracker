@@ -1,1 +1,0 @@
-https://api.instagram.com/v1/tags/{sanfrancisco}/media/recent?access_token=1350363816.1677ed0.22d2efcdff0c48cdabf495322231d450
