@@ -20,10 +20,6 @@ define([
             var galleries = new GalleryCollection();
             var galleryMetaDataListView = new GalleryMetaDataListView({ collection: galleries, el: '#gallery-container' });
 
-            //form to create gallery
-            var newGallery = new GalleryModel();
-            var newGalleryView = new GalleryNewView({model: newGallery,el: '#create-gallery'});
-            newGalleryView.render();
                
             },
 
